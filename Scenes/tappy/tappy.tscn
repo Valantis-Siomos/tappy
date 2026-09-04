@@ -350,11 +350,72 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
 radius = 17.029387
 
+[sub_resource type="Animation" id="Animation_s7su1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wbbc4"]
+resource_name = "fly"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.099999994, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74ti5"]
+_data = {
+&"RESET": SubResource("Animation_s7su1"),
+&"fly": SubResource("Animation_wbbc4")
+}
+
 [node name="Tappy" type="CharacterBody2D" unique_id=1459424886]
 script = ExtResource("1_s7su1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2127236012]
-position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"fly"
 autoplay = "fly"
@@ -362,3 +423,6 @@ autoplay = "fly"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056382860]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xrivr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=663879176]
+libraries/ = SubResource("AnimationLibrary_74ti5")
