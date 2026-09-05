@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c53n7ovtolff7" path="res://assets/background/Parallax0.png" id="1_mv0hc"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://Scenes/tappy/tappy.tscn" id="2_qxfds"]
+[ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://Scenes/pipes/pipes.tscn" id="3_qikps"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxfds"]
 normal = Vector2(0, 1)
@@ -11,6 +12,7 @@ normal = Vector2(0, 1)
 [node name="Game" type="Node2D" unique_id=1732436615]
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=698340067]
+z_index = 10
 position = Vector2(424, 790)
 texture = ExtResource("1_mv0hc")
 
@@ -26,3 +28,6 @@ shape = SubResource("WorldBoundaryShape2D_qxfds")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=160984270]
 position = Vector2(241, 801)
 shape = SubResource("WorldBoundaryShape2D_qikps")
+
+[node name="Pipes" parent="." unique_id=1721450855 instance=ExtResource("3_qikps")]
+position = Vector2(310, 254)
