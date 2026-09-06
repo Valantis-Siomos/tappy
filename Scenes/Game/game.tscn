@@ -4,13 +4,14 @@
 [ext_resource type="Script" uid="uid://exgrbl5uy0v1" path="res://Scenes/Game/game.gd" id="1_qikps"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://Scenes/tappy/tappy.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://Scenes/pipes/pipes.tscn" id="3_qikps"]
+[ext_resource type="PackedScene" uid="uid://bcowfqlji4or5" path="res://Scenes/game_ui/game_ui.tscn" id="5_ciybh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxfds"]
 normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qikps"]
 
-[node name="Game" type="Node" unique_id=788935766]
+[node name="Game" type="Node" unique_id=824834088]
 script = ExtResource("1_qikps")
 pipes_scene = ExtResource("3_qikps")
 
@@ -44,5 +45,9 @@ wait_time = 1.5
 autostart = true
 
 [node name="PipesHolder" type="Node" parent="." unique_id=1065355862]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=292525009]
+
+[node name="GameUi" parent="." unique_id=825009028 instance=ExtResource("5_ciybh")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
