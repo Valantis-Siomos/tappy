@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnqilomf5vcb8"]
 
 [ext_resource type="Texture2D" uid="uid://c53n7ovtolff7" path="res://assets/background/Parallax0.png" id="1_mv0hc"]
+[ext_resource type="Script" uid="uid://exgrbl5uy0v1" path="res://Scenes/Game/game.gd" id="1_qikps"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://Scenes/tappy/tappy.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://Scenes/pipes/pipes.tscn" id="3_qikps"]
 
@@ -9,7 +10,9 @@ normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qikps"]
 
-[node name="Game" type="Node2D" unique_id=1732436615]
+[node name="Game" type="Node" unique_id=788935766]
+script = ExtResource("1_qikps")
+pipes_scene = ExtResource("3_qikps")
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=698340067]
 z_index = 10
@@ -29,5 +32,16 @@ shape = SubResource("WorldBoundaryShape2D_qxfds")
 position = Vector2(241, 801)
 shape = SubResource("WorldBoundaryShape2D_qikps")
 
-[node name="Pipes" parent="." unique_id=1721450855 instance=ExtResource("3_qikps")]
-position = Vector2(310, 254)
+[node name="UpperSpawns" type="Marker2D" parent="." unique_id=1123758600]
+position = Vector2(580, 125)
+
+[node name="LowerSpawns" type="Marker2D" parent="." unique_id=609616312]
+position = Vector2(580, 488)
+
+[node name="Timer" type="Timer" parent="." unique_id=1160176599]
+wait_time = 1.2
+autostart = true
+
+[node name="PipesHolder" type="Node" parent="." unique_id=1065355862]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

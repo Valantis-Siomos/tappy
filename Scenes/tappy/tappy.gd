@@ -1,3 +1,5 @@
+class_name Tappy
+
 extends CharacterBody2D
 
 const JUMP_FORCE: float = -350.0
