@@ -7,6 +7,8 @@ extends Node
 
 @onready var pipes_holder: Node = $PipesHolder
 
+var MAIN = load("uid://bk7wx4bliuk8n")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_pipes()
@@ -25,3 +27,8 @@ func spawn_pipes() -> void:
 
 func _on_timer_timeout() -> void:
 	spawn_pipes()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("test"):
+		get_tree().change_scene_to_packed(MAIN)
