@@ -22,3 +22,10 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("fly")
 		_jumped = false
 	move_and_slide()
+	
+	if is_on_floor(): die()
+
+
+func die() -> void:
+	get_tree().paused = true
+	

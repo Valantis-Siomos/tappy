@@ -20,16 +20,17 @@ position = Vector2(424, 790)
 texture = ExtResource("1_mv0hc")
 
 [node name="Tappy" parent="." unique_id=1459424886 instance=ExtResource("2_qxfds")]
-position = Vector2(51, 199)
+position = Vector2(51, 330)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1307152751]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132419021]
 position = Vector2(239, -13)
 shape = SubResource("WorldBoundaryShape2D_qxfds")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=160984270]
-position = Vector2(241, 801)
+position = Vector2(241, 661)
 shape = SubResource("WorldBoundaryShape2D_qikps")
 
 [node name="UpperSpawns" type="Marker2D" parent="." unique_id=1123758600]
@@ -39,7 +40,7 @@ position = Vector2(580, 125)
 position = Vector2(580, 488)
 
 [node name="Timer" type="Timer" parent="." unique_id=1160176599]
-wait_time = 1.2
+wait_time = 1.5
 autostart = true
 
 [node name="PipesHolder" type="Node" parent="." unique_id=1065355862]

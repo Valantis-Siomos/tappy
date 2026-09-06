@@ -9,11 +9,19 @@ func _physics_process(delta: float) -> void:
 	position.x -= SCROLL_SPEED * delta
 	
 
-
-
 func _on_screen_exited() -> void:
 	queue_free()
 
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_pipe_body_entered(body: Node2D) -> void:
+	if body is Tappy: body.die()
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	print("_on_laser_body_entered: %s %s" % [
+		name, body.name
+	])
