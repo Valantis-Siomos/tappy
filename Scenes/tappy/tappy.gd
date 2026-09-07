@@ -2,6 +2,7 @@ class_name Tappy
 
 extends CharacterBody2D
 
+
 const JUMP_FORCE: float = -350.0
 
 
@@ -27,5 +28,6 @@ func _physics_process(delta: float) -> void:
 
 
 func die() -> void:
+	SignalHub.emit_tappy_died()
 	get_tree().paused = true
 	
