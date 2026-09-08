@@ -3,6 +3,7 @@ class_name Pipes
 extends Node2D
 
 const SCROLL_SPEED: float = 120.0
+@onready var score_sound: AudioStreamPlayer = $ScoreSound
 
 
 func _physics_process(delta: float) -> void:
@@ -22,6 +23,4 @@ func _on_pipe_body_entered(body: Node2D) -> void:
 
 
 func _on_laser_body_entered(body: Node2D) -> void:
-	print("_on_laser_body_entered: %s %s" % [
-		name, body.name
-	])
+	score_sound.play()

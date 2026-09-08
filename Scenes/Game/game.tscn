@@ -11,7 +11,7 @@ normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qikps"]
 
-[node name="Game" type="Node" unique_id=824834088]
+[node name="Game" type="Node" unique_id=235442192]
 script = ExtResource("1_qikps")
 pipes_scene = ExtResource("3_qikps")
 
@@ -50,5 +50,4 @@ autostart = true
 
 [node name="GameUi" parent="CanvasLayer" unique_id=825009028 instance=ExtResource("5_ciybh")]
 
-[connection signal="died" from="Tappy" to="." method="_on_tappy_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
