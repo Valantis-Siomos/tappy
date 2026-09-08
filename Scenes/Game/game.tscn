@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c53n7ovtolff7" path="res://assets/background/Parallax0.png" id="1_mv0hc"]
 [ext_resource type="Script" uid="uid://exgrbl5uy0v1" path="res://Scenes/Game/game.gd" id="1_qikps"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://Scenes/tappy/tappy.tscn" id="2_qxfds"]
+[ext_resource type="PackedScene" uid="uid://1xx582fdl2ip" path="res://Scenes/scolling_bg/scrolling_bg.tscn" id="3_flgk0"]
 [ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://Scenes/pipes/pipes.tscn" id="3_qikps"]
 [ext_resource type="PackedScene" uid="uid://bcowfqlji4or5" path="res://Scenes/game_ui/game_ui.tscn" id="5_ciybh"]
 
@@ -15,7 +16,11 @@ normal = Vector2(0, 1)
 script = ExtResource("1_qikps")
 pipes_scene = ExtResource("3_qikps")
 
+[node name="ScrollingBg" parent="." unique_id=1267871377 instance=ExtResource("3_flgk0")]
+position = Vector2(0, -19)
+
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=698340067]
+visible = false
 z_index = 10
 position = Vector2(424, 790)
 texture = ExtResource("1_mv0hc")
