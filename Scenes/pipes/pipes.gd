@@ -22,6 +22,6 @@ func _on_pipe_body_entered(body: Node2D) -> void:
 	if body is Tappy: body.die()
 
 
-func _on_laser_body_entered(body: Node2D) -> void:
+func _on_laser_body_entered(_body: Node2D) -> void:
 	score_sound.play()
 	ScoreManager.add_point()

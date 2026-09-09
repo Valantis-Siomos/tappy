@@ -11,6 +11,7 @@
 [node name="ScrollingBg" type="Node2D" unique_id=1267871377]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1035382425]
+self_modulate = Color(0.30692267, 0.3069227, 0.3069227, 1)
 texture = ExtResource("1_7ldki")
 centered = false
 
@@ -60,6 +61,7 @@ texture = ExtResource("6_hi5hm")
 centered = false
 
 [node name="Parallax2D6" type="Parallax2D" parent="." unique_id=1184418511]
+self_modulate = Color(0.21950102, 0.21950102, 0.21950102, 1)
 z_index = 10
 repeat_size = Vector2(1072, 0)
 autoscroll = Vector2(-150, 0)
