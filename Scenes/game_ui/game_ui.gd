@@ -7,6 +7,7 @@ extends Control
 @onready var sound: AudioStreamPlayer = $Sound
 @onready var press_jump_label: Label = $MarginContainer/PressJumpLabel
 @onready var timer: Timer = $Timer
+@onready var score_label: Label = $MarginContainer/ScoreLabel
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
@@ -16,9 +17,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	SignalHub.tappy_died.connect(game_over)
+	SignalHub.tappy_died.connect(on_game_over)
+	SignalHub.point_scored.connect(on_point_scored)
+	on_point_scored(0)
+	
+func on_point_scored(score: int) -> void:
+	score_label.text = "%04d" % score
 
-func game_over() -> void:
+func on_game_over() -> void:
 	game_over_label.show()
 	sound.play()
 	timer.start()

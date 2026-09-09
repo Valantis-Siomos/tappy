@@ -12,6 +12,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ScoreManager.reset_score()
 	spawn_pipes()
 
 func spawn_pipes() -> void:
